@@ -32,8 +32,19 @@
 %>
 		</tr>
 		<tr>
-			<td><%=vo.getBno()%></td>
-			<td><%=vo.getTitle()%></td>
+			<td><a href="boardcontent?no=<%=vo.getBno()%>"> <%=vo.getBno()%> </a></td>
+			<td>
+			<%
+				// 답글 몇단에 따라서 Re: 붙여주기
+				for(int i = 0; i<vo.getBreLevel(); i++){
+			%>
+					Re:
+			<%
+				}
+			%>
+			<%=vo.getTitle()%></td>
+			
+			
 			<td><%=vo.getWriter()%></td>
 			<td><%=vo.getCreateDate()%></td>
 		</tr>
@@ -70,7 +81,7 @@
 
 
 <br>
-<a href = "boardwrite.jsp">글쓰기</a>
+<a href = "boardwrite">글쓰기</a>
 
 
 </body>

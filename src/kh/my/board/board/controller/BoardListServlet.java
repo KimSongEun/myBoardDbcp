@@ -39,7 +39,7 @@ public class BoardListServlet extends HttpServlet {
 		
 		PrintWriter out  = response.getWriter();
 		
-		final int PAGE_SIZE = 5; // 한 페이지 당 글 수
+		final int PAGE_SIZE = 20; // 한 페이지 당 글 수
 		final int PAGE_BLOCK = 3; // 한 화면에 나타날 페이지 링크 수
 		int bCount = 0; // 총 글수
 		int pageCount = 0; // 총 페이지수
@@ -81,7 +81,6 @@ public class BoardListServlet extends HttpServlet {
 		request.setAttribute("pageCount", pageCount);
 		// Page 이동하면서 Data도 전달함.
 		request.getRequestDispatcher("/boardlist.jsp").forward(request, response);
-		
 		
 ////		if(volist.size() > 0) 
 //		{

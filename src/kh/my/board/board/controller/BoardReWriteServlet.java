@@ -33,6 +33,7 @@ public class BoardReWriteServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
+		request.setCharacterEncoding("UTF-8");
 		PrintWriter out = response.getWriter();
 		
 		// 답글이므로 어느 글에 답글을 달 것인가 정보가 전달되어 올 것임. 
@@ -47,8 +48,8 @@ public class BoardReWriteServlet extends HttpServlet {
 		}
 		// 화면입력 전달되어 옴. request - parameter (==변수명) : t, c
 		// http://localhost:8090/myBoard/boardwrite.kh?내용부분입력된값이지요&t=뭐라해야할지모를제목
-		String title = request.getParameter("t"); // 내용부분입력된값이지요
-		String content = request.getParameter("c"); // 뭐라해야할지모를제목
+		String title = request.getParameter("title"); // 내용부분입력된값이지요
+		String content = request.getParameter("content"); // 뭐라해야할지모를제목
 		String writer = (String)request.getSession().getAttribute("memberLoginInfo");
 		if(writer == null) {
 			writer = "user01"; // TODO: 임시 user 설정
@@ -59,12 +60,14 @@ public class BoardReWriteServlet extends HttpServlet {
 		Board vo = new Board(oVo.getBno(), title, content, writer, oVo.getBref(), oVo.getBreLevel(), oVo.getBreStep());
 		
 		int result = new BoardService().insertBoard(vo);
-		if(result == 0) {
-			out.println("<br>게시글 입력되지않았습니다. <br>작성된 글에 비속어가 포함되어 있습니다. <br>다시 작성해주세요.");
-		} else {
-			out.println("<br>게시글 입력되었습니다.");
-			
-		}
+//		if(result == 0) {
+//			out.println("<br>게시글 입력되지않았습니다. <br>작성된 글에 비속어가 포함되어 있습니다. <br>다시 작성해주세요.");
+//		} else {
+//			out.println("<br>게시글 입력되었습니다.");
+//		}
+		
+//		request.getRequestDispatcher("boardlist").forward(request, response);
+		response.sendRedirect("boardlist");
 			}
 
 	/**
