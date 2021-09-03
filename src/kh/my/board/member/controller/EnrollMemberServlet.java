@@ -42,7 +42,7 @@ public class EnrollMemberServlet extends HttpServlet {
 		PrintWriter out  = response.getWriter();
 		
 		// 화면에 받아온 데이터 - 임시
-		String member_id = "HHH";
+		String member_id = "dfge";
 		String member_pwd = "bbb";
 		String member_name = "aaaaa";
 		char gender = 'M'; // vo-char, db-char(1)

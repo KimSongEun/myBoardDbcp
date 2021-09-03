@@ -7,6 +7,7 @@
 	int startPage = (int)request.getAttribute("startPage");
 	int endPage = (int)request.getAttribute("endPage");
 	int pageCount = (int)request.getAttribute("pageCount");
+	String writer = (String)request.getSession().getAttribute("memberLoginInfo");
 	%>
 <!DOCTYPE html>
 <html>
@@ -16,6 +17,7 @@
 </head>
 <body>
 	<h1>게시판</h1>
+	<%=writer %> 님 환영합니다!
 	<table border = "1">
 		<tr>
 			<td>번호</td>

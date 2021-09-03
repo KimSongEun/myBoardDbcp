@@ -25,13 +25,13 @@ public class BoardService {
 		return vo;
 	}
 	
-//	public int updateContent(String content, String writer) {
-//		int result = -1;
-//		Connection conn = getConnection();
-//		result = new BoardDao().updateContent(conn, content, writer);
-//		close(conn);
-//		return result;
-//	}
+	public int updateContent(String content, String writer) {
+		int result = -1;
+		Connection conn = getConnection();
+		result = new BoardDao().updateContent(conn, content, writer);
+		close(conn);
+		return result;
+	}
 //	
 //	public int deleteContent(String writer, String deleteYn) {
 //		int result = -1; 

@@ -14,19 +14,19 @@ public class BoardDao {
 	public BoardDao() {
 	}
 	
-//	public int updateContent(Connection conn, String content, String writer) {
-//		int result = -1;
-//		String sql = "update board_r set content=? where writer = ?";
-//		try {
-//			PreparedStatement pstmt = conn.prepareStatement(sql);
-//			pstmt.setString(1, content);
-//			pstmt.setString(2, writer);				
-//			result = pstmt.executeUpdate();
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}
-//		return result;
-//	}	
+	public int updateContent(Connection conn, String content, String writer) {
+		int result = -1;
+		String sql = "update board_r set content=? where writer = ?";
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, content);
+			pstmt.setString(2, writer);				
+			result = pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return result;
+	}	
 //	
 //	public int deleteContent(Connection conn, String writer, String deleteYn) {
 //		int result = -1; 

@@ -14,18 +14,26 @@ public class MemberDao {
 	}
 
 	public int login(Connection conn, String member_id, String member_pwd) {
-		int result = 0; // 로그인 실패 : 0
-		String sql = "select member_id from member where member_id=? AND member_pwd = ?";
+		int result = -1; // 로그인 실패 : 0
+//		String sql = "select member_id from member where member_id=? AND member_pwd = ?";
+		String sql = "select member_pwd from member where member_id=?";
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, member_id);
-			pstmt.setString(2, member_pwd);
+//			pstmt.setString(2, member_pwd);
 			rset = pstmt.executeQuery();
 			if (rset.next()) {
+				String pwd = rset.getString(1);
+				if(member_pwd.equals(pwd)) {
 				result = 1; // 로그인 성공 : 1
-			} 
+				} else {
+					result=0;
+				}
+			} else {
+				result =2;
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {

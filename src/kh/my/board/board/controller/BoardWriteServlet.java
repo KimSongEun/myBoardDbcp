@@ -39,7 +39,7 @@ public class BoardWriteServlet extends HttpServlet {
 		// 답글이므로 어느 글에 답글을 달 것인가 정보가 전달되어 올 것임. 
 		Board oVo = null;
 		String viewBno = request.getParameter("bno"); // 현재 보고있는 bno 번호
-		if(viewBno == null) { // 기존 읽고 있던 글이 없다면 원본 새글쓰기로 인식
+		if(viewBno == null || viewBno.equals("")|| viewBno.equals("null")) { // 기존 읽고 있던 글이 없다면 원본 새글쓰기로 인식
 			oVo = new Board();
 		} else {
 		int bno = Integer.parseInt(viewBno);

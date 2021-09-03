@@ -55,7 +55,7 @@ public class MemberService {
 			// 회원가입시 event로 point 500
 			// 가입한 회원 id에 point를 수정
 				System.out.println("[sekim]-- point update before");
-				result2 = new MemberDao().updatePointMember(conn, "aaaaaa", 500);
+				result2 = new MemberDao().updatePointMember(conn, vo.getMember_id(), 500);
 				System.out.println("[sekim]-- point update result : " + result);
 
 			if(result > 0 && result2>0)

@@ -24,5 +24,7 @@
 		</tr>
 	</table>
 	<a href = "boardwrite?bno=<%=vo.getBno()%>">답글작성</a>
+	<a href = "boardwrite?bno=<%=vo.getBno()%>">수정</a>
+	<a href = "boardwrite?bno=<%=vo.getBno()%>">삭제</a>
 </body>
 </html>
