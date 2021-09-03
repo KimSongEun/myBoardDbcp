@@ -13,16 +13,16 @@ import kh.my.board.board.model.service.BoardService;
 import kh.my.board.board.model.vo.Board;
 
 /**
- * Servlet implementation class BoardReWriteServlet
+ * Servlet implementation class BoardWriteServlet
  */
 @WebServlet("/boardwrite.kh")
-public class BoardReWriteServlet extends HttpServlet {
+public class BoardWriteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public BoardReWriteServlet() {
+    public BoardWriteServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
