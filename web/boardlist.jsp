@@ -61,7 +61,7 @@
 	<%
 		if (startPage > 1){
 	%>
-		이전
+		<a href = "boardlist?pagenum=${startPage-1}">이전</a>
 	<%
 		}
 		for (int i = startPage; i <= endPage; i++) {
@@ -76,7 +76,7 @@
 	}
 	if (endPage < pageCount) {
 	%>
-		다음
+		<a href = "boardlist?pagenum=${endPage+1}">다음</a>
 	<%
 	}
 	%>
